@@ -1,8 +1,8 @@
-import React, { useEffect,useState } from 'react'
+import  { useEffect,useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 import socketInstance from '../utils/socketUtils'
-import { updateChatLog } from '../redux/slices/ChatSLice'
+import { updateChatLog } from '../redux/slices/ChatSlice'
 
 function useSocketConnection() {
 

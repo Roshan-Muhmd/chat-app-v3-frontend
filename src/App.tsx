@@ -5,8 +5,6 @@ import {
 } from "react-router-dom";
 import MainChatPage from "./pages/MainChatPage";
 import Auth from "./pages/Auth";
-import useAuthCheck from "./hooks/useAuthCheck";
-
 
 const router = createBrowserRouter([{
   path:"/",

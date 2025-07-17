@@ -50,6 +50,7 @@ function Auth() {
 
     const registerResponse = await commonApiRequest.post("auth/public/register",data)
 
+    console.log(registerResponse);
     
   }
 

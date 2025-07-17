@@ -1,14 +1,10 @@
-import React from "react";
 import "../assets/css/chat_page.css";
 import useSocketConnection from "../hooks/useSocketConnection";
 import ChatBlock from "./ChatBlock";
-import { selectChat } from "../utils/chatUtils";
 import { useDispatch } from "react-redux";
-import { selectActiveChat } from "../redux/slices/ChatSLice";
+import { selectActiveChat } from "../redux/slices/ChatSlice";
 
-type ChatPageProps = {
-  sendMessage: () => void; // Adjust the type as needed
-};
+
 const ChatPage = () => {
   const {onlineUserList,userData} = useSocketConnection();
   debugger

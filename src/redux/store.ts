@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AuthApi from "./apis/AuthApi"
 import AuthReducer from "./slices/AuthSlice"
-import ChatReducer from "./slices/ChatSLice"
+import ChatReducer from "./slices/ChatSlice"
 
 const store = configureStore({
     reducer: {

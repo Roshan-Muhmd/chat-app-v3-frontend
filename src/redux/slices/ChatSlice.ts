@@ -12,7 +12,7 @@ const ChatSlice = createSlice({
             state.activeChatData = action.payload.userData
 
         },
-        updateChatLog : (state,action) => {
+        updateChatLog : (state: any,action) => {
             debugger
             const data = action.payload
             let temp = state?.chatLog[data?.email]

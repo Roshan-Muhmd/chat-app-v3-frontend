@@ -1,22 +1,21 @@
-import React ,{useRef} from 'react'
+import {useRef} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import EmptyChatBlock from './EmptyChatBlock'
 import { sendMessage } from '../utils/chatUtils'
-import { RootState } from '@reduxjs/toolkit/query'
-import { updateChatLog } from '../redux/slices/ChatSLice'
+import { updateChatLog } from '../redux/slices/ChatSlice'
 
 function ChatBlock() {
 
-  const messageInputRef = useRef(null)
-  const activeChat = useSelector((state)=>state?.chat?.activeChatData)
-  const userData = useSelector((state: RootState)=> state.auth.userData)
-  const chatLog = useSelector((state)=> state?.chat?.chatLog)
+  const messageInputRef = useRef<HTMLInputElement>(null)
+  const activeChat = useSelector((state : any)=>state?.chat?.activeChatData)
+  const userData = useSelector((state: any)=> state.auth.userData)
+  const chatLog = useSelector((state: any)=> state?.chat?.chatLog)
   const currenctChat = chatLog[activeChat?.email] || []
   const dispatch = useDispatch()
 
 
   const sendMessageHandler = ()=> {
-    const message = messageInputRef?.current?.value
+    const message : any = messageInputRef?.current?.value
     sendMessage(message,activeChat,userData)
      dispatch(updateChatLog({message,email:activeChat?.email,type:0}))
   }
@@ -78,7 +77,7 @@ function ChatBlock() {
               </div>
               <div className="chat-history">
                 <ul className="m-b-0">
-                  {currenctChat?.length > 0 && currenctChat?.map((message)=>{
+                  {currenctChat?.length > 0 && currenctChat?.map((message : any)=>{
                     return (
                       <li className={message?.type == 1 ? 'incoming' : 'outgoing'}>{message?.value}</li>
                     )
